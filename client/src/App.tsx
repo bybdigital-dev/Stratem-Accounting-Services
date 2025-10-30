@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Router as WouterRouter, Switch, Route } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -12,8 +12,10 @@ import OurProcess from "@/pages/OurProcess";
 import Gallery from "@/pages/Gallery";
 import Contact from "@/pages/Contact";
 import NotFound from "@/pages/not-found";
+import ScrollToTop from "@/components/ScrollToTop";
+import { useHashLocation } from "wouter/use-hash-location";
 
-function Router() {
+function Routes() {
   return (
     <Switch>
       <Route path="/" component={Home} />
@@ -32,13 +34,17 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <div className="min-h-screen flex flex-col">
-          <Navigation />
-          <main className="flex-1">
-            <Router />
-          </main>
-          <Footer />
+          {/* router should wrap everything that needs routing */}
+          <WouterRouter hook={useHashLocation}>
+            <Navigation />
+            <main className="flex-1">
+              <Routes />
+              <ScrollToTop />
+            </main>
+            <Footer />
+          </WouterRouter>
+          <Toaster />
         </div>
-        <Toaster />
       </TooltipProvider>
     </QueryClientProvider>
   );

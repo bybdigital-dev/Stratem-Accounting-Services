@@ -18,7 +18,7 @@ export default function Home() {
         
         <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-8 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-white mb-6 md:mb-8">
-            Accounting, Payroll & Tax Solutions for Namibian Businesses
+            Accounting, Payroll & Tax Solutions for Namibian Businesses and Individuals
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl text-white/90 mb-8 md:mb-10 leading-relaxed max-w-3xl mx-auto">
             Stratem helps businesses and employees stay compliant with NamRA while keeping their finances organised. We pride ourselves on professional service and quick response times.
@@ -54,7 +54,7 @@ export default function Home() {
             Professional Accounting Services You Can Trust
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
-            Stratem Accounting Services is a trusted partner for businesses across Namibia. We specialize in comprehensive accounting solutions, from bookkeeping and payroll to employee taxation and pension assistance. Our team is dedicated to helping your business stay compliant with NamRA regulations while maintaining accurate, transparent financial records.
+            Stratem Accounting Services is a trusted partner for businesses and individuals across Namibia. We specialise in comprehensive accounting solutions, from bookkeeping and payroll to employee taxation and pension assistance. Our team is dedicated to helping your business stay compliant with NamRA regulations while maintaining accurate, transparent financial records.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
             <div className="flex flex-col items-center text-center space-y-3">

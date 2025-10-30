@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import ProcessStep from "@/components/ProcessStep";
 
 export default function OurProcess() {
@@ -41,11 +42,14 @@ export default function OurProcess() {
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
               Our proven process ensures accuracy, compliance, and peace of mind. Let's get started.
             </p>
-            <a href="/contact">
-              <button className="inline-flex items-center justify-center rounded-md text-base font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover-elevate active-elevate-2 min-h-10 px-8 py-6 text-lg" data-testid="button-start">
+            <Link href="/contact">
+              <button
+                className="inline-flex items-center justify-center rounded-md text-base font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover-elevate active-elevate-2 min-h-10 px-8 py-6 text-lg"
+                data-testid="button-start"
+              >
                 Start Your Journey
               </button>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
