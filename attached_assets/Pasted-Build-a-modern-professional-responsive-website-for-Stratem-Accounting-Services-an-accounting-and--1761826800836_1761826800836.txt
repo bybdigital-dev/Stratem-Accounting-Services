@@ -1,0 +1,105 @@
+Build a modern, professional, responsive website for Stratem Accounting Services, an accounting and tax services business based in Namibia. Use a cool, professional colour palette: navy / dark blue as primary, with grey and white backgrounds, and good spacing. Use a sans-serif font.
+
+Pages to include:
+
+Home (landing)
+
+Hero section with headline: “Accounting, Payroll & Tax Solutions for Namibian Businesses”
+
+Subtext: “Stratem helps businesses and employees stay compliant with NamRA while keeping their finances organised. We pride ourselves on professional service and quick response times.”
+
+Primary CTA button: “Request a Consultation” → links to Contact page
+
+Secondary CTA: “View Our Services”
+
+Short intro to who Stratem is.
+
+About Us
+
+Brief story of the company, based in Namibia.
+
+Emphasise reliability, fast turnaround and quick response times, and helping businesses avoid NamRA penalties.
+
+Bullet list: “Local expertise”, “Quick response times”, “Transparent reporting”.
+
+Services
+Create service cards/sections for the 4 main services below. Each must have a heading and bullet list.
+
+Bookkeeping
+
+Transaction capturing
+
+Bank/account reconciliation
+
+Month-end reporting
+
+Employee Taxation (ETX)
+
+Preparation and submission of monthly ETX files
+
+Correction of submitted ETX files
+
+Tax sessions for employees on annual return completion
+
+Registration of employees as taxpayers
+
+Payroll
+
+Monthly payroll processing
+
+Structuring of salaries
+
+Compliance with Namibian regulations
+
+Pension Assistance
+
+Assisting with collection of unclaimed pension monies
+
+Guiding employees/former employees through required documents
+
+Add a short paragraph at the top of Services:
+
+“We support Namibian businesses with full accounting admin so they can focus on operations. Our quick response times ensure clients always get the help they need, when they need it.”
+
+Our Process
+Create a simple 4-step horizontal (or vertical on mobile) process:
+
+Discovery – we gather information about your business and staff
+
+Setup – we align bookkeeping, payroll, and ETX with NamRA requirements
+
+Monthly Processing – we process transactions, payroll, and submit ETX
+
+Reporting & Support – we send reports and provide fast support when questions arise
+
+Gallery
+
+Placeholder images showing “office / finance / team / documents”
+
+Simple grid layout, 3 or 4 columns on desktop, 1–2 on mobile.
+
+Contact Page
+
+Contact form with fields: Name, Email, Phone, Company name, Service needed (dropdown: Bookkeeping, Employee taxation, Payroll, Pension assistance, General query), Message.
+
+Show contact info section with: “Serving clients across Namibia”, phone placeholder, and email placeholder.
+
+Add CTA text: “We respond within 1 business day.”
+
+Navigation
+
+Top navigation with logo text “Stratem Accounting Services” on the left.
+
+Menu items: Home, About Us, Services, Our Process, Gallery, Contact.
+
+Make the header sticky on scroll.
+
+General requirements
+
+Responsive layout (desktop, tablet, mobile).
+
+Don’t make it too busy — keep enough white space.
+
+Use sections with clear headings.
+
+Footer with current year, business name, and “Serving Namibia”.
