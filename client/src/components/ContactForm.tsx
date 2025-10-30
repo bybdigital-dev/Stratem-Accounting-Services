@@ -11,6 +11,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import { useMutation } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
 
 export default function ContactForm() {
   const { toast } = useToast();
@@ -23,21 +25,36 @@ export default function ContactForm() {
     message: "",
   });
 
+  const submitMutation = useMutation({
+    mutationFn: async (data: typeof formData) => {
+      return await apiRequest("POST", "/api/contact", data);
+    },
+    onSuccess: () => {
+      toast({
+        title: "Message Sent!",
+        description: "We'll respond within 1 business day.",
+      });
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        service: "",
+        message: "",
+      });
+    },
+    onError: (error: Error) => {
+      toast({
+        title: "Error",
+        description: error.message || "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    },
+  });
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    toast({
-      title: "Message Sent!",
-      description: "We'll respond within 1 business day.",
-    });
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      service: "",
-      message: "",
-    });
+    submitMutation.mutate(formData);
   };
 
   return (
@@ -50,6 +67,7 @@ export default function ContactForm() {
             required
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            disabled={submitMutation.isPending}
             data-testid="input-name"
           />
         </div>
@@ -61,6 +79,7 @@ export default function ContactForm() {
             required
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            disabled={submitMutation.isPending}
             data-testid="input-email"
           />
         </div>
@@ -74,6 +93,7 @@ export default function ContactForm() {
             type="tel"
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+            disabled={submitMutation.isPending}
             data-testid="input-phone"
           />
         </div>
@@ -83,6 +103,7 @@ export default function ContactForm() {
             id="company"
             value={formData.company}
             onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+            disabled={submitMutation.isPending}
             data-testid="input-company"
           />
         </div>
@@ -94,6 +115,7 @@ export default function ContactForm() {
           required
           value={formData.service}
           onValueChange={(value) => setFormData({ ...formData, service: value })}
+          disabled={submitMutation.isPending}
         >
           <SelectTrigger id="service" data-testid="select-service">
             <SelectValue placeholder="Select a service" />
@@ -116,12 +138,19 @@ export default function ContactForm() {
           rows={5}
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+          disabled={submitMutation.isPending}
           data-testid="input-message"
         />
       </div>
 
-      <Button type="submit" size="lg" className="w-full md:w-auto px-8" data-testid="button-submit">
-        Send Message
+      <Button 
+        type="submit" 
+        size="lg" 
+        className="w-full md:w-auto px-8" 
+        disabled={submitMutation.isPending}
+        data-testid="button-submit"
+      >
+        {submitMutation.isPending ? "Sending..." : "Send Message"}
       </Button>
     </form>
   );
